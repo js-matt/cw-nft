@@ -16,6 +16,9 @@ cargo unit-test
 ├── .cargo
 │   └── config.toml
 ├── src
+│   └── testing
+│   │   └── tests.rs
+│   │   └── mod.rs
 │   └── contract.rs
 │   └── lib.rs
 │   └── msg.rs
@@ -29,14 +32,28 @@ cargo unit-test
 cargo alias: `wasm` & `unit-test`
 
 ## src
-### contract.rs
+### /contract.rs
 
 - Defines a specialized type for a CW721 contract that includes additional metadata extensions.
 
-### lib.rs
+### /lib.rs
 - This file defines the main structure of the contract, exposing the necessary entry points for interacting with it.
 ### msg.rs
 - Define a type alias for ExecuteMsg & QueryMsg
-### state.rs
+### /state.rs
 - Metadata Struct: Contains detailed information about a music track, extending the standard CW721 metadata.
 - Extension Type Alias: Represents an optional Metadata structure, allowing tokens to include additional metadata if needed.
+
+### /testing/tests.rs
+- Unit test for the contract
+
+# Deploy
+## Prerequests
+- Python3
+- Osmosis testnet configuration
+- Gas fee
+
+## Command
+```
+python3 deploy_testnet.py
+```

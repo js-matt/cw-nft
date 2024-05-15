@@ -1,9 +1,7 @@
-// Define the contract module and its associated functionality.
-mod contract;
-// Publicly expose the messaging interfaces for external use.
-pub mod msg;
-// Define and manage the state of the contract.
-mod state;
+mod contract; // Define the contract module and its associated functionality.
+pub mod msg; // Publicly expose the messaging interfaces for external use.
+mod state; // Define and manage the state of the contract.
+mod testing; // Unit test
 use cosmwasm_std::{entry_point, Binary, Deps, DepsMut, Env, MessageInfo, Response, StdResult};
 pub use cw721_base::{ContractError, InstantiateMsg, MinterResponse};
 use {
